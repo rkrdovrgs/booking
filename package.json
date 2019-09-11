@@ -12,30 +12,30 @@
     "test": "node node_modules/jest/bin/jest.js --watch",
     "web": "webpack -w",
     "server": "nodemon server",
-    "postinstall": "webpack"
+    "x-postinstall": "webpack"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "expo": "^34.0.1",
-    "express": "^4.14.0",
-    "mongojs": "^2.4.0",
-    "react": "16.8.3",
-    "react-dom": "^16.8.6",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
-    "react-native-web": "^0.11.4",
-    "react-navigation": "^1.0.0-beta.11",
-    "react-router-dom": "^4.1.1",
     "babel-core": "^6.3.13",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",
+    "babel-preset-expo": "^6.0.0",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
-    "babel-preset-expo": "^6.0.0",
+    "body-parser": "^1.19.0",
+    "expo": "^34.0.1",
+    "express": "^4.14.0",
+    "mongojs": "^2.4.0",
     "nodemon": "^1.11.0",
+    "react": "16.8.3",
+    "react-dom": "^16.8.6",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
     "react-native-scripts": "0.0.50",
+    "react-native-web": "^0.11.4",
+    "react-navigation": "^1.0.0-beta.11",
+    "react-router-dom": "^4.1.1",
     "react-test-renderer": "16.0.0-alpha.12",
     "webpack": "^1.13.1"
   }
