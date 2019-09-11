@@ -1,4 +1,5 @@
-var { DefinePlugin } = require('webpack');
+const { DefinePlugin } = require('webpack');
+const path = require('path');
 
 module.exports = {
 
@@ -7,23 +8,20 @@ module.exports = {
 
   // The plain compiled JavaScript will be output into this file
   output: {
-    filename: "public/bundle.js"
+    path: path.resolve(__dirname, "public"),
+    filename: "bundle.js"
   },
 
   // This section desribes the transformations we will perform
   module: {
-    loaders: [
+    rules: [
       {
         // Only working with files that in in a .js or .jsx extension
         test: /\.jsx?$/,
         // Webpack will only process files in our src folder. This avoids processing
         // node modules and server files unnecessarily
         include: /(App\.dom|src)/,
-        loader: "babel",
-        query: {
-          // These are the specific transformations we'll be using.
-          presets: ["react", "es2015", "stage-0"]
-        }
+        loader: "babel-loader"
       }
     ]
   },
