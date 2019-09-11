@@ -8,13 +8,13 @@
   "main": "./node_modules/expo/AppEntry.js",
   "scripts": {
     "expo": "expo start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
+    "eject": "expo eject",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
     "test": "node node_modules/jest/bin/jest.js --watch",
     "web": "webpack -w",
     "server": "nodemon server",
-    "x-postinstall": "webpack"
+    "postinstall": "webpack"
   },
   "jest": {
     "preset": "jest-expo"
@@ -31,7 +31,6 @@
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
-    "react-native-scripts": "0.0.50",
     "react-native-web": "^0.11.4",
     "react-navigation": "^1.0.0-beta.11",
     "react-router-dom": "^4.1.1",
