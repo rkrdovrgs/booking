@@ -7,6 +7,18 @@ const ProResult = (props) => (
             {props.pro.name}
         </Link>
         <address style={styles.txt}>{props.pro.address}</address>
+        {props.pro.avail.map(avail => avail.days.includes(new Date().getDay()) ?
+            (
+                avail.ranges.map(range => (
+                    <div>
+                        {range.from} - {range.to}
+                    </div>
+                ))
+            ) :
+            (
+                <div>Closed</div>
+            )
+        )}
     </div>
 );
 
