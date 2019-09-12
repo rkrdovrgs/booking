@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Article = (props) => (
+const ProResult = (props) => (
     <div style={styles.item}>
-        <Link to={`/article/${props.article._id}`} style={Object.assign({}, styles.txt, { fontWeight: 'bold' })}>
-            {props.article.headline}
+        <Link to={`/pro/${props.pro.friendlyId}`} style={Object.assign({}, styles.txt, { fontWeight: 'bold' })}>
+            {props.pro.name}
         </Link>
-        <p style={styles.txt}>{props.article.snippet}</p>
+        <address style={styles.txt}>{props.pro.address}</address>
     </div>
 );
 
@@ -22,4 +22,4 @@ const styles = {
     }
 };
 
-export default Article;
+export default ProResult;

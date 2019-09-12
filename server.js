@@ -33,7 +33,7 @@ app.use(function (req, res) {
 });
 
 // Syncronyze database
-seed.sync();
+seed.sync(true);
 
 // -------------------------------------------------
 

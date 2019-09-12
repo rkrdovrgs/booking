@@ -7,8 +7,8 @@ class SearchScreen extends SearchScreenBase {
     render() {
         return (
             <div style={styles.container}>
-                <SearchBox onSearch={this.handleSearch.bind(this)} placeholder='Search' />
-                <SearchResults articles={this.state.articles} />
+                <SearchBox onSearch={this.handleSearch.bind(this)} placeholder='Search barber shop' />
+                <SearchResults pros={this.state.pros} />
             </div>
         );
     }

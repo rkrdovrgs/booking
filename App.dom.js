@@ -8,10 +8,10 @@ import ArticleScreen from './src/components/ArticleScreen/ArticleScreen.dom';
 ReactDOM.render(
     <BrowserRouter history={history}>
         <div>
-            <Header>MERRnN</Header>
+            <Header>Bookings</Header>
             <Switch>
                 <Route exact path="/" component={SearchScreen} />
-                <Route path="/article/:id" component={ArticleScreen} />
+                <Route path="/book/:friendlyId" component={ArticleScreen} />
             </Switch>
         </div>
     </BrowserRouter>,

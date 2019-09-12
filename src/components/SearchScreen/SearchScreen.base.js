@@ -3,20 +3,24 @@ import config from '../../config.base';
 
 class SearchScreenBase extends Component {
     state = {
-        articles: []
+        pros: []
     }
 
-    handleSearch(searchTerm) {
+    componentWillMount() {
+        this.handleSearch();
+    }
+
+    handleSearch(searchTerm = "") {
         var query = { searchTerm },
             queryString = Object.keys(query)
                 .map(p => `${p}=${encodeURIComponent(query[p])}`)
                 .join('&');
-        fetch(`${config.baseApiUrl}api/articles?${queryString}`)
+        fetch(`${config.baseApiUrl}api/pros?${queryString}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
                 this.setState({
-                    articles: data
+                    pros: data
                 });
             });
     }

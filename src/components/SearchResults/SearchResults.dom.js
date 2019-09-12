@@ -1,10 +1,10 @@
 import React from 'react';
-import Article from '../Article/Article.dom';
+import ProResult from '../ProResult/ProResult.dom';
 
 const SearchResults = (props) => (
     <div>
-        {props.articles.map(article => (
-            <Article key={article._id} article={article} />
+        {props.pros.map(pro => (
+            <ProResult key={pro._id} pro={pro} />
         ))}
     </div>
 );
