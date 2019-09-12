@@ -10,7 +10,7 @@ class SearchScreen extends SearchScreenBase {
         return (
             <View style={styles.container}>
                 <SearchBox onSearch={this.handleSearch.bind(this)} placeholder='Search' />
-                <SearchResults articles={this.state.articles} navigation={this.props.navigation} />
+                <SearchResults pros={this.state.pros} navigation={this.props.navigation} />
             </View>
         );
     }

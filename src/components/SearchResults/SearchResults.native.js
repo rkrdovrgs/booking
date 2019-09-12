@@ -1,11 +1,11 @@
 import React from 'react';
 import { ScrollView, Text } from 'react-native';
-import Article from '../Article/Article.native';
+import ProResult from '../ProResult/ProResult.native';
 
 const SearchResults = (props) => (
     <ScrollView>
-        {props.articles.map(article => (
-            <Article key={article._id} article={article} navigation={props.navigation} />
+        {props.pros.map(pro => (
+            <ProResult key={pro._id} pro={pro} navigation={props.navigation} />
         ))}
     </ScrollView>
 );
