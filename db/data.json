@@ -3,27 +3,102 @@
         {
             "friendlyId": "ricky-fresh",
             "name": "Ricky Fresh",
-            "address": "1835 S State Rd 7, Fort Lauderdale, FL 33317"
+            "address": "1835 S State Rd 7, Fort Lauderdale, FL 33317",
+            "avail": [
+                {
+                    "days": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
+                    ],
+                    "from": "10:00 AM",
+                    "to": "8:00 PM"
+                }
+            ]
         },
         {
             "friendlyId": "klean-kutt",
             "name": "Klean Kutt",
-            "address": "3886 Davie Blvd, Fort Lauderdale, FL 33312"
+            "address": "3886 Davie Blvd, Fort Lauderdale, FL 33312",
+            "avail": [
+                {
+                    "days": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
+                    ],
+                    "from": "10:00 AM",
+                    "to": "8:00 PM"
+                }
+            ]
         },
         {
             "friendlyId": "kool-kutz",
             "name": "Kool Kutz",
-            "address": "3623 Davie Blvd, Fort Lauderdale, FL 33312"
+            "address": "3623 Davie Blvd, Fort Lauderdale, FL 33312",
+            "avail": [
+                {
+                    "days": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
+                    ],
+                    "from": "10:00 AM",
+                    "to": "8:00 PM"
+                }
+            ]
         },
         {
             "friendlyId": "riverland",
             "name": "Riverland",
-            "address": "2762 Davie Blvd, Fort Lauderdale, FL 33312"
+            "address": "2762 Davie Blvd, Fort Lauderdale, FL 33312",
+            "avail": [
+                {
+                    "days": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
+                    ],
+                    "from": "10:00 AM",
+                    "to": "8:00 PM"
+                }
+            ]
         },
         {
             "friendlyId": "you-and-me",
             "name": "You & Me",
-            "address": "3573 Davie Blvd, Fort Lauderdale, FL 33312"
+            "address": "3573 Davie Blvd, Fort Lauderdale, FL 33312",
+            "avail": [
+                {
+                    "days": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
+                    ],
+                    "from": "10:00 AM",
+                    "to": "8:00 PM"
+                }
+            ]
         }
     ]
 }

@@ -1,3 +1,11 @@
-{   
-    "ignore": ["node_modules"] 
+{
+    "ignore": [
+        "node_modules",
+        "src/**/*",
+        "public/**/*",
+        "README.md",
+        "App.dom.js",
+        "App.js",
+        "webpack.config.js"
+    ]
 }
