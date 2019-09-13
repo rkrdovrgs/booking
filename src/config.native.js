@@ -1,7 +1,8 @@
+const env = require("./config.native.json");
+
 const config = {
     development: {
-        baseApiUrl: 'http://192.168.1.113:3000/'
-        //baseApiUrl: 'https://merrnn.herokuapp.com/'
+        baseApiUrl: `http://${env.LOCAL_IP}:3000/`
     },
     production: {
         baseApiUrl: 'https://merrnn.herokuapp.com/'

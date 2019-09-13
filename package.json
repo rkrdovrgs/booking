@@ -7,8 +7,8 @@
   },
   "main": "./node_modules/expo/AppEntry.js",
   "scripts": {
-    "expo": "expo start",
-    "eject": "expo eject",
+    "expo": "node ./src/config.native.setup.js && expo start",
+    "expo:publish": "export NODE_ENV=production && expo publish ||  export NODE_ENV=development",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "test": "node node_modules/jest/bin/jest.js --watch",
