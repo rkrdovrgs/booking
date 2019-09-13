@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import config from '../../config.base';
-import * as moment from "moment";
+import moment from "moment";
 
 const AvailFormat = "h:mm A";
 class BookProScreenBase extends Component {
