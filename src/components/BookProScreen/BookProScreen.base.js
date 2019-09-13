@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import config from '../../config.base';
 
 class BookProScreenBase extends Component {
-    state = {
-        pro: {}
-    };
+    state = {};
 
     componentDidMount() {
         fetch(`${config.baseApiUrl}api/pros/${this.proFriendlyId}`)
