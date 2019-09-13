@@ -4,7 +4,10 @@ import moment from "moment";
 
 class ConfirmBookProScreen extends Component {
     state = {
-        contact: {}
+        contact: {
+            fullName: "",
+            phone: ""
+        }
     };
 
     constructor(...args) {
@@ -20,6 +23,23 @@ class ConfirmBookProScreen extends Component {
                     fromDisplay: moment.unix(this.fromUnix).format("dddd, MMMM Do YYYY, h:mm a")
                 });
             });
+    }
+
+    confirmBooking(event) {
+        event.preventDefault();
+        this.prosService.confirmBooking(this.proFriendlyId, this.fromUnix, this.state.contact)
+            .then(booking => {
+                this.navigateToSuccessBookingScreen(booking);
+            });
+    }
+
+    updateContactInfo(contact) {
+        this.setState({
+            contact: {
+                ...this.state.contact,
+                ...contact
+            }
+        });
     }
 
 }

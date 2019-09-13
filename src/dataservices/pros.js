@@ -16,4 +16,17 @@ export class ProsService {
             .then(response => response.json());
     }
 
+    confirmBooking(proFriendlyId, fromUnix, contact) {
+        return fetch(`${config.baseApiUrl}api/pros/${proFriendlyId}/book`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                fromUnix,
+                contact
+            })
+        }).then(response => response.json());
+    }
+
 }
