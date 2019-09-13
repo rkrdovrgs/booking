@@ -16,5 +16,9 @@ export const appStyles = {
         margin: 10,
         backgroundColor: '#238c59',
         padding: 10
+    },
+    textBox: {
+        display: "block",
+        width: "100%"
     }
 };

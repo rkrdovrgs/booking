@@ -4,6 +4,7 @@ import Header from './src/components/Header/Header.dom';
 import { BrowserRouter, Route, Switch, history } from 'react-router-dom';
 import SearchScreen from './src/components/SearchScreen/SearchScreen.dom';
 import BookProScreen from './src/components/BookProScreen/BookProScreen.dom';
+import ConfirmBookProScreen from './src/components/ConfirmBookProScreen/ConfirmBookProScreen.dom';
 
 ReactDOM.render(
     <BrowserRouter history={history}>
@@ -11,6 +12,7 @@ ReactDOM.render(
             <Header>Demo</Header>
             <Switch>
                 <Route exact path="/" component={SearchScreen} />
+                <Route path="/book/:friendlyId/at/:fromUnix/confirm" component={ConfirmBookProScreen} />
                 <Route path="/book/:friendlyId" component={BookProScreen} />
             </Switch>
         </div>

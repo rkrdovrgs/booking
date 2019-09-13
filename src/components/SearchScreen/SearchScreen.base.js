@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import config from '../../config.base';
+import { ProsService } from '../../dataservices/pros';
 
 class SearchScreenBase extends Component {
     state = {
         pros: []
+    }
+
+    constructor(...args) {
+        super(...args);
+        this.prosService = new ProsService();
     }
 
     componentDidMount() {
@@ -11,14 +16,8 @@ class SearchScreenBase extends Component {
     }
 
     handleSearch(searchTerm = "") {
-        var query = { searchTerm },
-            queryString = Object.keys(query)
-                .map(p => `${p}=${encodeURIComponent(query[p])}`)
-                .join('&');
-        fetch(`${config.baseApiUrl}api/pros?${queryString}`)
-            .then(response => response.json())
+        this.prosService.searchPros(searchTerm)
             .then(data => {
-                console.log(data);
                 this.setState({
                     pros: data
                 });
