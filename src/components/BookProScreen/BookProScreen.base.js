@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import config from '../../config.base';
 
-class ArticleScreenBase extends Component {
+class BookProScreenBase extends Component {
     state = {
-        article: {}
+        pro: {}
     };
 
-    componentWillMount() {
-        fetch(`${config.baseApiUrl}api/articles/${this.articleId}`)
+    componentDidMount() {
+        fetch(`${config.baseApiUrl}api/pros/${this.proFriendlyId}`)
             .then(response => response.json())
             .then(data => {
                 this.setState({
-                    article: data
+                    pro: data
                 });
             });
     }
 }
 
-export default ArticleScreenBase;
+export default BookProScreenBase;

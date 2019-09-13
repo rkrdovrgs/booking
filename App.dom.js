@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './src/components/Header/Header.dom';
 import { BrowserRouter, Route, Switch, history } from 'react-router-dom';
 import SearchScreen from './src/components/SearchScreen/SearchScreen.dom';
-import ArticleScreen from './src/components/ArticleScreen/ArticleScreen.dom';
+import BookProScreen from './src/components/BookProScreen/BookProScreen.dom';
 
 ReactDOM.render(
     <BrowserRouter history={history}>
@@ -11,7 +11,7 @@ ReactDOM.render(
             <Header>Bookings</Header>
             <Switch>
                 <Route exact path="/" component={SearchScreen} />
-                <Route path="/book/:friendlyId" component={ArticleScreen} />
+                <Route path="/book/:friendlyId" component={BookProScreen} />
             </Switch>
         </div>
     </BrowserRouter>,

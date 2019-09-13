@@ -6,7 +6,7 @@ class SearchScreenBase extends Component {
         pros: []
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.handleSearch();
     }
 

@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom';
 
 const ProResult = (props) => (
     <div style={styles.item}>
-        <Link to={`/pro/${props.pro.friendlyId}`} style={Object.assign({}, styles.txt, { fontWeight: 'bold' })}>
+        <Link to={`/book/${props.pro.friendlyId}`} style={Object.assign({}, styles.txt, { fontWeight: 'bold' })}>
             {props.pro.name}
         </Link>
         <address style={styles.txt}>{props.pro.address}</address>
-        {props.pro.avail.map(avail => avail.days.includes(new Date().getDay()) ?
+        {props.pro.avail.map((avail, i) => avail.days.includes(new Date().getDay()) ?
             (
-                avail.ranges.map(range => (
-                    <div>
+                avail.ranges.map((range, r) => (
+                    <div key={`range-${i}-${r}`}>
                         {range.from} - {range.to}
                     </div>
                 ))
             ) :
             (
-                <div>Closed</div>
+                <div key={`range-${i}`}>Closed</div>
             )
         )}
     </div>
