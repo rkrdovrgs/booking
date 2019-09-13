@@ -26,7 +26,7 @@ class ConfirmBookProScreen extends Component {
     }
 
     confirmBooking(event) {
-        event.preventDefault();
+        !!event && event.preventDefault();
         this.prosService.confirmBooking(this.proFriendlyId, this.fromUnix, this.state.contact)
             .then(booking => {
                 this.navigateToSuccessBookingScreen(booking);
