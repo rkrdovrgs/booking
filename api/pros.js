@@ -8,9 +8,8 @@ var db = connection(['pros']);
 //Get all articles
 router.get('/pros', function (req, res, next) {
     db.pros.find({
-        name: { $regex: `.*${req.query.searchTerm}.*` }
+        name: { $regex: new RegExp(`.*${req.query.searchTerm}.*`, "i") }
     }, function (err, pros) {
-        console.log(arguments);
         if (err) return res.send(err);
         res.json(pros);
     });

@@ -3,13 +3,13 @@ import { AppRegistry, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import SearchScreen from './src/components/SearchScreen/SearchScreen.native';
 import SplashScreen from './src/components/SplashScreen/SplashScreen.native';
-import ArticleScreen from './src/components/ArticleScreen/ArticleScreen.native';
+import BookProScreen from './src/components/BookProScreen/BookProScreen.native';
 
 export default App = StackNavigator(
   {
     Home: { screen: SearchScreen },
     Splash: { screen: SplashScreen },
-    Article: { screen: ArticleScreen }
+    BookPro: { screen: BookProScreen }
   },
   {
     initialRouteName: 'Splash',
