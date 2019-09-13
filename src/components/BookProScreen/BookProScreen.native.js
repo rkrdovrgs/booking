@@ -4,11 +4,11 @@ import BookProScreenBase from './BookProScreen.base';
 import { appStyles } from '../../../App.styles.native';
 
 class BookProScreen extends BookProScreenBase {
-    proFriendlyId = this.props.navigation.state.params.friendlyId;
+    proFriendlyId = this.props.navigation.state.params.proFriendlyId;
 
     navigateToConfirmationScreen(spot) {
         this.props.navigation.navigate('ConfirmBookPro', {
-            friendlyId: this.state.pro.friendlyId,
+            proFriendlyId: this.state.pro.friendlyId,
             fromUnix: spot.fromUnix
         });
     }

@@ -1,9 +1,14 @@
 export const appStyles = {
     h1: {
-        fontSize: 30,
+        fontSize: 35,
         fontWeight: "200"
     },
     h2: {
+        fontSize: 27,
+        marginTop: 15,
+        marginBottom: 10
+    },
+    h3: {
         fontSize: 20,
         marginTop: 15,
         marginBottom: 10

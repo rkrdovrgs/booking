@@ -5,13 +5,15 @@ import SearchScreen from './src/components/SearchScreen/SearchScreen.native';
 import SplashScreen from './src/components/SplashScreen/SplashScreen.native';
 import BookProScreen from './src/components/BookProScreen/BookProScreen.native';
 import ConfirmBookProScreen from './src/components/ConfirmBookProScreen/ConfirmBookProScreen.native';
+import BookingConfirmedScreen from './src/components/BookingConfirmedScreen/BookingConfirmedScreen.native';
 
 export default App = StackNavigator(
   {
     Home: { screen: SearchScreen },
     Splash: { screen: SplashScreen },
     BookPro: { screen: BookProScreen },
-    ConfirmBookPro: { screen: ConfirmBookProScreen }
+    ConfirmBookPro: { screen: ConfirmBookProScreen },
+    BookingConfirmed: { screen: BookingConfirmedScreen }
   },
   {
     initialRouteName: 'Splash',

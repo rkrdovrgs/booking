@@ -4,12 +4,12 @@ import ConfirmBookProScreenBase from './ConfirmBookProScreen.base';
 import { appStyles } from '../../../App.styles.native';
 
 class ConfirmBookProScreen extends ConfirmBookProScreenBase {
-    proFriendlyId = this.props.navigation.state.params.friendlyId;
+    proFriendlyId = this.props.navigation.state.params.proFriendlyId;
     fromUnix = this.props.navigation.state.params.fromUnix;
 
     navigateToSuccessBookingScreen(booking) {
-        this.props.navigation.navigate('BookingConfirmedScreen', {
-            friendlyId: booking.friendlyId,
+        this.props.navigation.navigate('BookingConfirmed', {
+            proFriendlyId: booking.proFriendlyId,
             bookingId: booking._id
         });
     }
@@ -31,7 +31,7 @@ class ConfirmBookProScreen extends ConfirmBookProScreenBase {
 
                 <Text>Phone:</Text>
                 <TextInput style={styles.textInput} value={this.state.contact.phone}
-                    onChangeText={(text) => this.updateContactInfo({ fullName: text })} />
+                    onChangeText={(text) => this.updateContactInfo({ phone: text })} />
 
                 <TouchableOpacity style={appStyles.submitButton} onPress={() => this.confirmBooking()}>
                     <Text>Confirm</Text>
