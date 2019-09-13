@@ -8,7 +8,7 @@ import BookProScreen from './src/components/BookProScreen/BookProScreen.dom';
 ReactDOM.render(
     <BrowserRouter history={history}>
         <div>
-            <Header>Bookings</Header>
+            <Header>Demo</Header>
             <Switch>
                 <Route exact path="/" component={SearchScreen} />
                 <Route path="/book/:friendlyId" component={BookProScreen} />
