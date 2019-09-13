@@ -25,6 +25,16 @@ router.get('/pros/:friendlyId', function (req, res, next) {
     });
 });
 
+// Get pro existing bookings
+router.get('/pros/:friendlyId/bookings', function (req, res, next) {
+    db.bookings.find({
+        proFriendlyId: req.params.friendlyId
+    }, function (err, bookings) {
+        if (err) return res.send(err);
+        res.json(bookings);
+    });
+});
+
 // Book appointment
 router.post('/pros/:friendlyId/book', function (req, res, next) {
     db.bookings.insert({

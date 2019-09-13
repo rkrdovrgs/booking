@@ -16,6 +16,11 @@ export class ProsService {
             .then(response => response.json());
     }
 
+    getProExistingBookings(proFriendlyId) {
+        return fetch(`${config.baseApiUrl}api/pros/${proFriendlyId}/bookings`)
+            .then(response => response.json());
+    }
+
     confirmBooking(proFriendlyId, fromUnix, contact) {
         return fetch(`${config.baseApiUrl}api/pros/${proFriendlyId}/book`, {
             method: "POST",

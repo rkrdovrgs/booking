@@ -12,29 +12,35 @@ class BookProScreenBase extends Component {
     }
 
     componentDidMount() {
-        this.prosService.getProByFriendlyId(this.proFriendlyId)
-            .then(data => {
-                let avail = data.avail.filter(avail => avail.days.includes(new Date().getDay()));
-                this.setState({
-                    pro: data,
-                    avail,
-                    spots: this.getAvailableSpots(avail)
-                });
+        Promise.all([
+            this.prosService.getProExistingBookings(this.proFriendlyId),
+            this.prosService.getProByFriendlyId(this.proFriendlyId)
+        ]).then(data => {
+            let avail = data[1].avail.filter(avail => avail.days.includes(new Date().getDay()));
+            this.setState({
+                pro: data[1],
+                avail,
+                spots: this.getAvailableSpots(avail, data[0])
             });
+        });
     }
 
-    getAvailableSpots(avail) {
+    getAvailableSpots(avail, existingBookings) {
         let spots = [];
         avail.forEach(a => {
             a.ranges.forEach(range => {
                 let targetDate = moment(range.from, AvailFormat),
                     toDate = moment(range.to, AvailFormat);
                 while (targetDate.toDate() < toDate.toDate()) {
-                    spots.push({
-                        fromUnix: targetDate.unix(),
-                        from: targetDate.format(AvailFormat),
-                        to: targetDate.add(1, "hour").format(AvailFormat)
-                    });
+                    if (!existingBookings.some(b => b.fromUnix === targetDate.unix().toString())) {
+                        spots.push({
+                            fromUnix: targetDate.unix(),
+                            from: targetDate.format(AvailFormat),
+                            to: targetDate.add(1, "hour").format(AvailFormat)
+                        });
+                    } else {
+                        targetDate.add(1, "hour");
+                    }
                 }
             });
         });
