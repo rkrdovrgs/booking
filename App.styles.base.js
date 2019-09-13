@@ -8,17 +8,22 @@ export const appStyles = {
         marginTop: 15,
         marginBottom: 10
     },
-    txt: {
+    text: {
         fontSize: 16,
         color: 'white'
     },
-    item: {
+    listItem: {
         margin: 10,
         backgroundColor: '#238c59',
         padding: 10
     },
-    textBox: {
-        display: "block",
+    textInput: {
+        margin: 10,
+        height: 45,
+        fontSize: 18
+    },
+    submitButton: {
+        height: 45,
         width: "100%"
     }
 };

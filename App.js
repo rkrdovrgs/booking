@@ -4,12 +4,14 @@ import { StackNavigator } from 'react-navigation';
 import SearchScreen from './src/components/SearchScreen/SearchScreen.native';
 import SplashScreen from './src/components/SplashScreen/SplashScreen.native';
 import BookProScreen from './src/components/BookProScreen/BookProScreen.native';
+import ConfirmBookProScreen from './src/components/ConfirmBookProScreen/ConfirmBookProScreen.native';
 
 export default App = StackNavigator(
   {
     Home: { screen: SearchScreen },
     Splash: { screen: SplashScreen },
-    BookPro: { screen: BookProScreen }
+    BookPro: { screen: BookProScreen },
+    ConfirmBookPro: { screen: ConfirmBookProScreen }
   },
   {
     initialRouteName: 'Splash',

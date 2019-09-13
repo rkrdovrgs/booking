@@ -1,10 +1,17 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import BookProScreenBase from './BookProScreen.base';
-import { appStyles } from '../../../App.styles';
+import { appStyles } from '../../../App.styles.native';
 
 class BookProScreen extends BookProScreenBase {
     proFriendlyId = this.props.navigation.state.params.friendlyId;
+
+    navigateToConfirmationScreen(spot) {
+        this.props.navigation.navigate('ConfirmBookPro', {
+            friendlyId: this.state.pro.friendlyId,
+            fromUnix: spot.fromUnix
+        });
+    }
 
     render() {
         if (!this.state.pro) {
@@ -26,8 +33,8 @@ class BookProScreen extends BookProScreenBase {
                 <Text style={appStyles.h2}>Available spots</Text>
 
                 {this.state.spots.map((spot, i) => (
-                    <TouchableOpacity style={appStyles.item} key={spot.fromUnix} onPress={() => props.navigation.navigate('ConfirmBookPro', { friendlyId: props.pro.friendlyId, fromUnix: spot.fromUnix })}>
-                        <Text style={appStyles.txt}>{spot.from} - {spot.to}</Text>
+                    <TouchableOpacity style={appStyles.listItem} key={spot.fromUnix} onPress={() => this.navigateToConfirmationScreen(spot)}>
+                        <Text style={appStyles.text}>{spot.from} - {spot.to}</Text>
                     </TouchableOpacity>
                 ))}
             </View>

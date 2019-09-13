@@ -1,7 +1,7 @@
 import React from 'react';
 import ConfirmBookProScreenBase from './ConfirmBookProScreen.base';
 import { Link } from 'react-router-dom';
-import { appStyles } from '../../../App.styles';
+import { appStyles } from '../../../App.styles.dom';
 
 class ConfirmBookProScreen extends ConfirmBookProScreenBase {
     proFriendlyId = this.props.match.params.friendlyId;
@@ -19,14 +19,14 @@ class ConfirmBookProScreen extends ConfirmBookProScreenBase {
                 <h3>{this.state.fromDisplay}</h3>
                 <form>
                     Name:
-                    <input style={appStyles.textBox} required type="text" value={this.state.contact.fullName} />
+                    <input style={appStyles.textInput} required type="text" value={this.state.contact.fullName} />
                     <br />
 
                     Phone:
-                    <input style={appStyles.textBox} required type="text" value={this.state.contact.phone} />
+                    <input style={appStyles.textInput} required type="text" value={this.state.contact.phone} />
                     <br />
 
-                    <button type="submit">Confirm</button>
+                    <button style={appStyles.submitButton} type="submit">Confirm</button>
                 </form>
             </div>
         );

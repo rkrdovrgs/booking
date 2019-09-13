@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import BookProScreenBase from './BookProScreen.base';
-import { appStyles } from '../../../App.styles';
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
+import ConfirmBookProScreenBase from './ConfirmBookProScreen.base';
+import { appStyles } from '../../../App.styles.native';
 
-class BookProScreen extends BookProScreenBase {
+class ConfirmBookProScreen extends ConfirmBookProScreenBase {
     proFriendlyId = this.props.navigation.state.params.friendlyId;
+    fromUnix = this.props.navigation.state.params.fromUnix;
 
     render() {
         if (!this.state.pro) {
@@ -12,28 +13,32 @@ class BookProScreen extends BookProScreenBase {
         }
 
         return (
-            <View>
-                <Text style={appStyles.h1}>{this.state.pro.name}</Text>
+            <View style={{ margin: 10 }}>
+                <Text style={appStyles.h1}>Confirm Appointment at {this.state.pro.name}</Text>
                 <Text>{this.state.pro.address}</Text>
-                {this.state.avail.map((avail, i) => (
-                    avail.ranges.map((range, r) => (
-                        <Text key={`range-${i}-${r}`}>
-                            {range.from} - {range.to}
-                        </Text>
-                    ))
-                ))}
+                <Text style={appStyles.h2}>{this.state.fromDisplay}</Text>
 
-                <Text style={appStyles.h2}>Available spots</Text>
+                <Text>Name:</Text>
+                <TextInput style={styles.textInput} value={this.state.contact.fullName} />
 
-                {this.state.spots.map((spot, i) => (
-                    <TouchableOpacity style={appStyles.item} key={spot.fromUnix} onPress={() => props.navigation.navigate('ConfirmBookPro', { friendlyId: props.pro.friendlyId, fromUnix: spot.fromUnix })}>
-                        <Text style={appStyles.txt}>{spot.from} - {spot.to}</Text>
-                    </TouchableOpacity>
-                ))}
+                <Text>Phone:</Text>
+                <TextInput style={styles.textInput} value={this.state.contact.phone} />
+
+                <TouchableOpacity style={appStyles.submitButton}>
+                    <Text>Confirm</Text>
+                </TouchableOpacity>
+
             </View>
         );
     }
 }
 
-export default BookProScreen;
+const styles = {
+    textInput: {
+        ...appStyles.textInput,
+        margin: 0
+    }
+}
+
+export default ConfirmBookProScreen;
 
