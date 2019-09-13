@@ -1,10 +1,11 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
+import { appStyles } from '../../../App.styles';
 
 const ProResult = (props) => (
-    <TouchableOpacity style={styles.item} onPress={() => props.navigation.navigate('BookPro', { friendlyId: props.pro.friendlyId })}>
-        <Text style={[styles.txt, { fontWeight: 'bold' }]}>{props.pro.name}</Text>
-        <Text style={styles.txt}>{props.pro.address}</Text>
+    <TouchableOpacity style={appStyles.item} onPress={() => props.navigation.navigate('BookPro', { friendlyId: props.pro.friendlyId })}>
+        <Text style={[appStyles.txt, { fontWeight: 'bold' }]}>{props.pro.name}</Text>
+        <Text style={appStyles.txt}>{props.pro.address}</Text>
         {props.pro.avail.map((avail, i) => avail.days.includes(new Date().getDay()) ?
             (
                 avail.ranges.map((range, r) => (
@@ -17,17 +18,5 @@ const ProResult = (props) => (
         )}
     </TouchableOpacity>
 );
-
-const styles = {
-    txt: {
-        fontSize: 16,
-        color: 'white'
-    },
-    item: {
-        margin: 10,
-        backgroundColor: '#238c59',
-        padding: 10
-    }
-};
 
 export default ProResult;

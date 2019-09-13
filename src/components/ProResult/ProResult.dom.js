@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { appStyles } from '../../../App.styles';
 
 const ProResult = (props) => (
-    <div style={styles.item}>
-        <Link to={`/book/${props.pro.friendlyId}`} style={Object.assign({}, styles.txt, { fontWeight: 'bold' })}>
+    <div style={appStyles.item}>
+        <Link to={`/book/${props.pro.friendlyId}`} style={Object.assign({}, appStyles.txt, { fontWeight: 'bold' })}>
             {props.pro.name}
         </Link>
-        <address style={styles.txt}>{props.pro.address}</address>
+        <address style={appStyles.txt}>{props.pro.address}</address>
         {props.pro.avail.map((avail, i) => avail.days.includes(new Date().getDay()) ?
             (
                 avail.ranges.map((range, r) => (
@@ -21,17 +22,5 @@ const ProResult = (props) => (
         )}
     </div>
 );
-
-const styles = {
-    txt: {
-        fontSize: 16,
-        color: 'white'
-    },
-    item: {
-        margin: 10,
-        backgroundColor: '#238c59',
-        padding: 10
-    }
-};
 
 export default ProResult;
