@@ -1,5 +1,6 @@
 import React from 'react';
-import BookProScreenBase from './BookProScreen.base'
+import BookProScreenBase from './BookProScreen.base';
+import { Link } from 'react-router-dom';
 
 class BookProScreen extends BookProScreenBase {
     proFriendlyId = this.props.match.params.friendlyId;
@@ -13,18 +14,25 @@ class BookProScreen extends BookProScreenBase {
             <div>
                 <label>{this.state.pro.name}</label>
                 <address>{this.state.pro.address}</address>
-                {this.state.pro.avail.map((avail, i) => avail.days.includes(new Date().getDay()) ?
-                    (
-                        avail.ranges.map((range, r) => (
-                            <div key={`range-${i}-${r}`}>
-                                {range.from} - {range.to}
-                            </div>
-                        ))
-                    ) :
-                    (
-                        <div key={`range-${i}`}>Closed</div>
-                    )
-                )}
+                {this.state.avail.map((avail, i) => (
+                    avail.ranges.map((range, r) => (
+                        <div key={`range-${i}-${r}`}>
+                            {range.from} - {range.to}
+                        </div>
+                    ))
+                ))}
+
+                <h2>Available spots</h2>
+                <ul>
+                    {this.state.spots.map((spot, i) => (
+                        <li key={spot.fromUnix}>
+                            <Link to={`/book/${this.proFriendlyId}/at/${spot.fromUnix}/confirm`}>
+                                {spot.from} - {spot.to}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+
             </div>
         );
     }
