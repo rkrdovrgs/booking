@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { appStyles } from '../../../App.styles.dom';
 
 class BookProScreen extends BookProScreenBase {
-    proFriendlyId = this.props.match.params.friendlyId;
+    proFriendlyId = this.props.match.params.proFriendlyId;
 
     render() {
         if (!this.state.pro) {

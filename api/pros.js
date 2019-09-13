@@ -37,4 +37,14 @@ router.post('/pros/:friendlyId/book', function (req, res, next) {
     });
 });
 
+// Get booking confirmation by id
+router.get('/booking/:bookingId', function (req, res, next) {
+    db.bookings.findOne({
+        _id: mongojs.ObjectId(req.params.bookingId)
+    }, function (err, booking) {
+        if (err) return res.send(err);
+        res.json(booking);
+    });
+});
+
 module.exports = router;

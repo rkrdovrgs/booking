@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { appStyles } from '../../../App.styles.dom';
 
 class ConfirmBookProScreen extends ConfirmBookProScreenBase {
-    proFriendlyId = this.props.match.params.friendlyId;
+    proFriendlyId = this.props.match.params.proFriendlyId;
     fromUnix = this.props.match.params.fromUnix;
     history = this.props.history;
 

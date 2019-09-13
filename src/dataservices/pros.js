@@ -29,4 +29,9 @@ export class ProsService {
         }).then(response => response.json());
     }
 
+    getBookingConfirmation(bookingId) {
+        return fetch(`${config.baseApiUrl}api/booking/${bookingId}`)
+            .then(response => response.json());
+    }
+
 }
