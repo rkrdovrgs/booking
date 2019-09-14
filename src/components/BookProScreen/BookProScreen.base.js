@@ -32,7 +32,7 @@ class BookProScreenBase extends Component {
                 let targetDate = moment(range.from, AvailFormat),
                     toDate = moment(range.to, AvailFormat);
                 while (targetDate.toDate() < toDate.toDate()) {
-                    if (!existingBookings.some(b => b.fromUnix === targetDate.unix().toString())) {
+                    if (!existingBookings.some(b => b.fromUnix.toString() === targetDate.unix().toString())) {
                         spots.push({
                             fromUnix: targetDate.unix(),
                             from: targetDate.format(AvailFormat),
